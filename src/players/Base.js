@@ -33,7 +33,7 @@ export default class Base extends Component {
       this.stop()
       clearTimeout(this.updateTimeout)
     }
-    if (!playing && nextProps.playing) {
+    if (!playing && nextProps.playing && !nextProps.suppressPlay) {
       this.play()
     }
     if (playing && !nextProps.playing) {
@@ -111,7 +111,7 @@ export default class Base extends Component {
       if (this.loadOnReady) {
         this.load(this.loadOnReady)
         this.loadOnReady = null
-      } else {
+      } else if (!this.props.suppressPlay) {
         this.play()
       }
     }
