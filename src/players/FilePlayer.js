@@ -52,6 +52,13 @@ export default class FilePlayer extends Base {
     this.removeListeners()
     super.componentWillUnmount()
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.ref && this.ref.src == nextProps.url)
+    {
+      return false;
+    }
+    return nextProps !== this.props || nextState !== this.state;
+  }
   addListeners () {
     const { playsinline, onPause, onEnded, onError } = this.props
     this.player.addEventListener('canplay', this.onReady)
