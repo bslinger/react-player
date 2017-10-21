@@ -53,7 +53,7 @@ export default class FilePlayer extends Base {
     super.componentWillUnmount()
   }
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.ref && this.ref.src == nextProps.url)
+    if (this.player && this.player.src == nextProps.url)
     {
       return false;
     }
