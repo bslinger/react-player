@@ -99,7 +99,6 @@ export default class ReactPlayer extends Component {
     this.progressTimeout = setTimeout(this.progress, this.props.progressFrequency)
   }
   renderActivePlayer (url) {
-    if (!url) return null
     for (let Player of SUPPORTED_PLAYERS) {
       if (Player.canPlay(url)) {
         return this.renderPlayer(Player)
