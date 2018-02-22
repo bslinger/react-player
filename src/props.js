@@ -73,6 +73,7 @@ export const defaultProps = {
   style: {},
   progressFrequency: 1000,
   playsinline: false,
+  suppressPlay: false,
   config: {
     soundcloud: {
       options: {
